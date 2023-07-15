@@ -18,9 +18,9 @@ function App() {
 
   return (
     <div className="background">
-      <h1>글자를 센다.</h1>
-      <p className="content">공백 포함 : {count}</p>
-      <p className="content">공백 미포함 : {textCount}</p>
+      <h1>😎글자를 센다.🙄</h1>
+      <p className="content">🙆‍♀️공백 포함🙆‍♂️ : {count}</p>
+      <p className="content">🙅‍♂️공백 미포함🙅‍♀️ : {textCount}</p>
 
       <textarea className="textBox" onChange={handleChange}></textarea>
     </div>
