@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState } from "react";
 
 function App() {
+  const [count, setCount] = useState(0);
+  const [textCount, setTextCount] = useState(0);
+
+  const handleChange = (e) => {
+    let text = e.target.value;
+
+    let totalTextCount = text.length;
+
+    let onlyTextCount = text.replace(/\s/g, "").length;
+
+    setCount(totalTextCount);
+    setTextCount(onlyTextCount);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="background">
+      <h1>글자를 센다.</h1>
+      <p className="content">공백 포함 : {count}</p>
+      <p className="content">공백 미포함 : {textCount}</p>
+
+      <textarea className="textBox" onChange={handleChange}></textarea>
     </div>
   );
 }
