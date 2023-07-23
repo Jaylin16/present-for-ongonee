@@ -25,7 +25,7 @@ chrome.action.onClicked.addListener(async (tab) => {
       // Insert the CSS file when the user turns the extension on
 
       await chrome.scripting.executeScript({
-        files: ["test.js", "createElement.js"],
+        files: ["counter.js", "createElement.js"],
         target: { tabId: tab.id },
       });
 
