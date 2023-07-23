@@ -1,16 +1,30 @@
 function createTag() {
-  const frame = document.getElementById("mainFrame");
-  const frameContents = frame.contentDocument.body;
+  const frameContents = document.getElementById("mainFrame").contentDocument;
 
-  let new_DivTag = document.createElement("div");
-  console.log("frame: " + frame);
-  console.log("new_DivTag: " + new_DivTag);
+  const target = frameContents.getElementsByClassName("se-canvas-bottom")[0];
 
-  new_DivTag.setAttribute("class", "bottom-box");
-  new_DivTag.innerHTML = "추가된 태그";
+  if (
+    frameContents.getElementsByClassName("bottom-box").length === 0 &&
+    target != null
+  ) {
+    const createBox = document.createElement("div");
 
-  console.log("new_DivTag: " + new_DivTag);
-  frameContents.appendChild(new_DivTag);
+    //추후 삭제해야할 부분
+    createBox.style.width = "100px";
+    createBox.style.height = "50px";
+    createBox.style.backgroundColor = "red";
+    createBox.style.opacity = 0.4;
+    createBox.style.display = "flex";
+    createBox.style.flexDirection = "column";
+    createBox.style.justifyContent = "center";
+    createBox.style.alignItems = "center";
+    createBox.style.margin = "0 auto";
+
+    createBox.setAttribute("class", "bottom-box");
+    createBox.innerHTML = "🙆‍♀️공백 포함🙆‍♂️ : <br><br> 🙅‍♂️공백 미포함🙅‍♀️ :";
+
+    target.appendChild(createBox);
+  }
 }
 
 createTag();

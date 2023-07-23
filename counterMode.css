@@ -10,14 +10,6 @@ main > :last-child {
   margin-bottom: min(10vmax, 10rem);
 }
 
-/* body > .se-component-content * {
-  font-weight: 700;
-} */
-
-div > p {
-  font-weight: 700;
-}
-
 .bottom-box {
   position: fixed;
   bottom: 0;
